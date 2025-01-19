@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>сообщение</title>
+    <title>Сайт для ...</title>
     <style>
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #a4f5c3, #c1f2c4);
+            background: linear-gradient(135deg, #f5a4d5, #e3c1f2);
             margin: 0;
             padding: 0;
             display: flex;
@@ -25,7 +25,7 @@
         }
         h1 {
             font-size: 2.5rem;
-            color: #a8f9d0;
+            color: #f9a8d4;
             margin-bottom: 20px;
             animation: slideIn 2s ease-in-out;
         }
@@ -39,15 +39,15 @@
             padding: 15px;
             font-size: 1.2rem;
             border-radius: 8px;
-            border: 1px solid #a8f9d0;
+            border: 1px solid #f1d5d8;
             width: 80%;
             margin-bottom: 20px;
-            background: #fdfdfdc9;
+            background: #fce4ec;
         }
         button {
             padding: 15px 25px;
             font-size: 1.1rem;
-            background-color:#f9a8d4;
+            background-color: #f9a8d4;
             color: white;
             border: none;
             border-radius: 8px;
@@ -57,16 +57,11 @@
         button:hover {
             background-color: #f78fb3;
         }
-        #error-message, #congrats-message {
+        #error-message {
+            color: red;
             font-size: 1.1rem;
             margin-top: 10px;
             display: none;
-        }
-        #error-message {
-            color: red;
-        }
-        #congrats-message {
-            color: green;
         }
         @keyframes fadeIn {
             0% {
@@ -89,33 +84,22 @@
 <body>
 
 <div id="container">
-    <h1>Для тебя,... Чтобы узнать кто напиши имю</h1>
-    <p>Пожалуйста, введи своё имя, чтобы продолжить...</p>
+    <h1>Введи свое имя</h1>
+    <p>Пожалуйста, введи имя, чтобы продолжить...</p>
     <input type="text" id="name" placeholder="Введите имя">
     <button id="submit-btn">Отправить</button>
     <p id="error-message">Неверное имя. Попробуй снова.</p>
-    <p id="congrats-message">Поздравляю, вы ничего не выиграли!</p>
 </div>
 
 <script>
     document.getElementById("submit-btn").addEventListener("click", () => {
         const inputName = document.getElementById("name").value.trim();
 
-        const errorMessage = document.getElementById("error-message");
-        const congratsMessage = document.getElementById("congrats-message");
-
-        // Сбрасываем сообщения
-        errorMessage.style.display = "none";
-        congratsMessage.style.display = "none";
-
+        // Если имя совпадает с "Dilfuza" или "дилфуза"
         if (inputName.toLowerCase() === "dilfuza" || inputName.toLowerCase() === "дилфуза") {
-            window.location.href = " https://7bhomeprogrammer.github.io/sndsite/"; // Перенаправление на сайт
-        } else if (inputName.toLowerCase() === "azatbek" || inputName.toLowerCase() === "азатбек") {
-            window.location.href = "https://7bhomeprogrammer.github.io/adminpanel/"; // Перенаправление на админ-панель
-        } else if (inputName) {
-            congratsMessage.style.display = "block"; // Показываем сообщение "ничего не выиграли"
+            window.location.href = "https://7bhomeprogrammer.github.io/sndsite/"; // Перенаправление на второй сайт
         } else {
-            errorMessage.style.display = "block"; // Показываем сообщение об ошибке
+            document.getElementById("error-message").style.display = "block"; // Показываем сообщение об ошибке
         }
     });
 </script>
