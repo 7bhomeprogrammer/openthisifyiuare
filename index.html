@@ -1,200 +1,109 @@
-<!D<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для Тебя</title>
+    <title>Для Дилфузы</title>
     <style>
-        /* Общие стили */
         body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5a4d5, #e3c1f2);
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-            overflow: hidden;
+            height: 100vh;
         }
-
-        /* Природный стиль для формы ввода имени */
-        #auth-container {
-            width: 80%;
-            max-width: 600px;
-            background: linear-gradient(135deg, #b4e391, #6ab07c);
-            color: #fff;
+        #container {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
         }
-
         h1 {
             font-size: 2.5rem;
-            color: #fff;
+            color: #f9a8d4;
             margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
+            animation: slideIn 2s ease-in-out;
         }
-
         p {
             font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        input {
-            padding: 0.8rem;
-            font-size: 1rem;
-            border: 2px solid #fff;
-            border-radius: 5px;
-            width: 80%;
-            margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.8);
-        }
-
-        button {
-            padding: 0.8rem 2rem;
-            font-size: 1.2rem;
-            color: #fff;
-            background: #4caf50;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #388e3c;
-        }
-
-        /* Романтичный стиль для основного сообщения */
-        #message-container {
-            display: none;
-            width: 80%;
-            max-width: 600px;
-            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        #message-container h1 {
-            font-size: 2.5rem;
-            color: #ff6f61;
-            margin-bottom: 20px;
-        }
-
-        #message-container p {
-            font-size: 1.2rem;
+            color: #3a3a3a;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
-
-        /* Анимация появления */
+        input {
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #f1d5d8;
+            width: 80%;
+            margin-bottom: 20px;
+            background: #fce4ec;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            background-color: #f9a8d4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #f78fb3;
+        }
+        #error-message {
+            color: red;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: none;
+        }
         @keyframes fadeIn {
-            from {
+            0% {
                 opacity: 0;
-                transform: translateY(20px);
             }
-            to {
+            100% {
                 opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-30px);
+            }
+            100% {
                 transform: translateY(0);
             }
-        }
-
-        /* Таймер обратного отсчета */
-        #timer {
-            font-size: 1.5rem;
-            margin-top: 20px;
-            color: #fff;
-        }
-
-        /* Секретное послание */
-        .secret-message {
-            display: none;
-            font-size: 1.5rem;
-            color: #ff6f61;
-            margin-top: 20px;
-            transition: all 0.5s ease;
-        }
-
-        /* Анимация таймера */
-        @keyframes timerAnimation {
-            0% { opacity: 0; transform: scale(0.5); }
-            100% { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
 <body>
-    <!-- Мелодия на фоне -->
-    <audio id="background-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3">
-    </audio>
 
-    <!-- Форма ввода имени -->
-    <div id="auth-container">
-        <h1>Привет! Введи своё имя:</h1>
-        <input type="text" id="name" placeholder="Введите имя">
-        <button id="submit-btn">Открыть</button>
-        <button id="playMusicBtn">Слушать музыку</button>
-        <p id="error-message" style="color: red; display: none;">Неверное имя! Попробуйте ещё раз.</p>
-    </div>
+<div id="container">
+    <h1>Для тебя, Дилфуза</h1>
+    <p>Ты заслуживаешь всего самого лучшего, и я создал этот сайт специально для тебя.</p>
+    <p>Пожалуйста, введи своё имя, чтобы продолжить...</p>
+    <input type="text" id="name" placeholder="Введите имя">
+    <button id="submit-btn">Отправить</button>
+    <p id="error-message">Неверное имя. Попробуй снова.</p>
+</div>
 
-    <!-- Сообщение для Дилфузы -->
-    <div id="message-container">
-        <h1 id="personal-greeting"></h1>
-        <p>Иногда так сложно подобрать слова, чтобы описать то, что я чувствую. Но я попробую. Ты — тот самый человек, который освещает мою жизнь.</p>
-        <p>Дилфуза, ты — моя вдохновительница. Это маленькое признание, но оно от всей души. Спасибо, что ты есть. Ты особенная.</p>
+<script>
+    document.getElementById("submit-btn").addEventListener("click", () => {
+        const inputName = document.getElementById("name").value.trim();
 
-        <!-- Таймер обратного отсчета -->
-        <div id="timer">Ожидайте... Время: <span id="time"></span></div>
+        // Если имя совпадает с "Dilfuza" или "дилфуза"
+        if (inputName.toLowerCase() === "dilfuza" || inputName.toLowerCase() === "дилфуза") {
+            window.location.href = "https://7bhomeprogrammer.github.io/openthisifyiuare/"; // Перенаправление на твой сайт
+        } else {
+            document.getElementById("error-message").style.display = "block"; // Показываем сообщение об ошибке
+        }
+    });
+</script>
 
-        <!-- Секретное послание -->
-        <div class="secret-message" id="secretMessage">
-            Ты мне нравишся !.
-        </div>
-    </div>
-
-    <script>
-        // Список допустимых имен
-        const allowedNames = ["Dilfuza", "dilfuza", "DILFUZA", "Дилфуза", "дилфуза", "ДИЛФУЗА"];
-
-        // Событие при нажатии кнопки для воспроизведения музыки
-        document.getElementById("playMusicBtn").addEventListener("click", () => {
-            const music = document.getElementById("background-music");
-            music.play();
-        });
-
-        // Событие при нажатии кнопки
-        document.getElementById("submit-btn").addEventListener("click", () => {
-            const inputName = document.getElementById("name").value.trim();
-            if (allowedNames.includes(inputName)) {
-                // Персонализированное приветствие
-                document.getElementById("personal-greeting").textContent = `Привет, ${inputName}! Это для тебя...`;
-
-                // Таймер
-                let timeRemaining = 5; // Время для таймера (в секундах)
-                const timerElement = document.getElementById("time");
-                const countdown = setInterval(() => {
-                    timerElement.textContent = `${timeRemaining} секунд`;
-                    timeRemaining--;
-                    if (timeRemaining < 0) {
-                        clearInterval(countdown);
-                        document.getElementById("secretMessage").style.display = "block"; // Показываем секретное послание
-                    }
-                }, 1000);
-
-                // Переход к сообщению
-                document.getElementById("auth-container").style.display = "none";
-                document.getElementById("message-container").style.display = "block";
-            } else {
-                // Если имя неверное
-                document.getElementById("error-message").style.display = "block";
-            }
-        });
-    </script>
 </body>
 </html>
-
