@@ -58,40 +58,5 @@
         }
     </style>
 </head>
-<body>
-    <div id="container">
-        <h1>Привет!</h1>
-        <p>Добро пожаловать! Мы рады видеть тебя.</p>
-        <button onclick="goToRomanticSite()">Перейти дальше</button>
-    </div>
-    <script>
-        function goToRomanticSite() {
-            window.location.href = "romantic.html"; // Ссылка на второй сайт
-        }
-    </script>
-</body>
-    <div id="container">
-    <h1>Введи свое имя</h1>
-    <p>Пожалуйста, введи имя, чтобы продолжить...</p>
-    <input type="text" id="name" placeholder="Введите имя">
-    <button id="submit-btn">Отправить</button>
-    <p id="error-message">Неверное имя. Попробуй снова.</p>
-</div>
-
-<script>
-    document.getElementById("submit-btn").addEventListener("click", () => {
-        const inputName = document.getElementById("name").value.trim();
-
-        // Если имя совпадает с "Dilfuza" или "дилфуза"
-        if (inputName.toLowerCase() === "dilfuza" || inputName.toLowerCase() === "дильфуза") {
-            window.location.href = "https://7bhomeprogrammer.github.io/sndsite/"; // Перенаправление на второй сайт
-        } else {
-            document.getElementById("error-message").style.display = "block"; // Показываем сообщение об ошибке
-        }
-    });
-</script>
-
-</body>
-
 </html>
 
