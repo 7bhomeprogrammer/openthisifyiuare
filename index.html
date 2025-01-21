@@ -56,7 +56,34 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+        #error-message {
+            color: red;
+            font-size: 1rem;
+            display: none;
+            margin-top: 15px;
+        }
     </style>
 </head>
-</html>
+<body>
+    <div id="container">
+        <h1>Введи свое имя</h1>
+        <p>Пожалуйста, введи имя, чтобы продолжить...</p>
+        <input type="text" id="name" placeholder="Введите имя">
+        <button id="submit-btn">Отправить</button>
+        <p id="error-message">Неверное имя. Попробуй снова.</p>
+    </div>
 
+    <script>
+        document.getElementById("submit-btn").addEventListener("click", () => {
+            const inputName = document.getElementById("name").value.trim();
+
+            // Если имя совпадает с "Dilfuza" или "дилфуза"
+            if (inputName.toLowerCase() === "Dilfuza" || inputName.toLowerCase() === "Дильфуза") {
+                window.location.href = "https://7bhomeprogrammer.github.io/sndsite/"; // Перенаправление на второй сайт
+            } else {
+                document.getElementById("error-message").style.display = "block"; // Показываем сообщение об ошибке
+            }
+        });
+    </script>
+</body>
+</html>
