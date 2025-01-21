@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт для ...</title>
+    <title>Welcome</title>
     <style>
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #f5a4d5, #e3c1f2);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff7eb3, #ffe29f);
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,73 +17,60 @@
         }
         #container {
             text-align: center;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s ease-in-out;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
         h1 {
-            font-size: 2.5rem;
-            color: #f9a8d4;
+            font-size: 3rem;
+            color: #ff5e78;
             margin-bottom: 20px;
-            animation: slideIn 2s ease-in-out;
+            animation: popIn 1s ease-in-out;
         }
         p {
-            font-size: 1.2rem;
-            color: #3a3a3a;
+            font-size: 1.3rem;
+            color: #555;
             margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        input {
-            padding: 15px;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            border: 1px solid #f1d5d8;
-            width: 80%;
-            margin-bottom: 20px;
-            background: #fce4ec;
+            animation: fadeIn 2s ease-in-out;
         }
         button {
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            background-color: #f9a8d4;
+            padding: 15px 30px;
+            font-size: 1.2rem;
             color: white;
+            background-color: #ff5e78;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s, background-color 0.3s;
         }
         button:hover {
-            background-color: #f78fb3;
+            background-color: #e04860;
+            transform: scale(1.1);
         }
-        #error-message {
-            color: red;
-            font-size: 1.1rem;
-            margin-top: 10px;
-            display: none;
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        @keyframes slideIn {
-            0% {
-                transform: translateY(-30px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
-
-<div id="container">
+    <div id="container">
+        <h1>Привет!</h1>
+        <p>Добро пожаловать! Мы рады видеть тебя.</p>
+        <button onclick="goToRomanticSite()">Перейти дальше</button>
+    </div>
+    <script>
+        function goToRomanticSite() {
+            window.location.href = "romantic.html"; // Ссылка на второй сайт
+        }
+    </script>
+</body>
+    <div id="container">
     <h1>Введи свое имя</h1>
     <p>Пожалуйста, введи имя, чтобы продолжить...</p>
     <input type="text" id="name" placeholder="Введите имя">
@@ -96,7 +83,7 @@
         const inputName = document.getElementById("name").value.trim();
 
         // Если имя совпадает с "Dilfuza" или "дилфуза"
-        if (inputName.toLowerCase() === "dilfuza" || inputName.toLowerCase() === "дилфуза") {
+        if (inputName.toLowerCase() === "dilfuza" || inputName.toLowerCase() === "дильфуза") {
             window.location.href = "https://7bhomeprogrammer.github.io/sndsite/"; // Перенаправление на второй сайт
         } else {
             document.getElementById("error-message").style.display = "block"; // Показываем сообщение об ошибке
@@ -105,4 +92,6 @@
 </script>
 
 </body>
+
 </html>
+
